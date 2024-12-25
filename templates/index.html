@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header" style="--bg-image-panel: url('{{ url_for('static', filename='src/panal.png') }}');">
+        <!-- Логотип -->
+        <div class="logo" style="--bg-image-logo: url('{{url_for('static', filename='src/logo_site.png') }}');"></div>
+
+        <!-- Панель навигации -->
+        <div class="nav">
+            <a href="/" class="button" style="--bg-image: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
+            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');">Главная</a>
+            <a href="/about" class="button" style="--bg-image: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
+            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');">О нас</a>
+            <a href="/contact" class="button" style="--bg-image: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
+            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');">Контакты</a>
+        </div>
+    </div>
+        <div class="content">
+          <div class="center-smth">
+            <div class="centered-text-block">
+                <div class="text-header">
+                <h1>Добро пожаловать на главную страницу!</h1>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Нижний блок с мелким текстом -->
+            <div class="small-text">
+                <p>Я известен как разработчик мобильных игр, 
+                но я также попробовал сделать сайты. 
+                На примере данного сайта вы можете видеть моё развитие в этом направлении, 
+                однако не стоит забывать, первоначално я разработчик игр, и свой первый сайт я решил сделать про себя. 
+                Выпущенные мной продукты в Play Market:</p>
+            </div>
+        </div>
+    <div class="centered">
+        <hr class="styled-line">
+
+        <!-- STYLISH HORIZON -->
+
+    <div class="video-panel">
+        <video class="video-bg" autoplay muted loop>
+          <source src="{{ url_for('static', filename='src/stylish_horizon_rendeer.mp4') }}" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="overlay-content">
+          <img src="{{ url_for('static', filename='src/SH_icon.png') }}" alt="Иконка игры" class="game-icon">
+          <h1 class="game-title">Stylish horizon</h1>
+          <p class="game-description">Игра про дрифт, где вы можете провести своё свободное время! Веселитесь и получайте удовольствие!</p>
+          <a href="https://play.google.com/store/apps/details?id=com.AGAMESSTUDIO.Stylishhorizon" class="button-download" style="--bg-image-download: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
+            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');" target="_blank">Подробнее о продукте</a>
+        </div>
+      </div>
+      <hr class="styled-line">
+      <div class="text-warning">
+        <p> Больше не поддерживаемые продукты:</p>
+      </div>
+      <hr class="styled-line">
+
+      <!-- GLOW DUEL -->
+
+      <div class="video-panel">
+        <video class="video-bg-not-supported" autoplay muted loop>
+          <source src="{{ url_for('static', filename='src/duel_rendeer.mp4') }}" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="overlay-content">
+          <img src="{{ url_for('static', filename='src/Duel_icon.png') }}" alt="Иконка игры" class="game-icon">
+          <h1 class="game-title">Glow duel</h1>
+          <p class="game-description">Игра предназначена для игры с другом! Веселитесь и узнайте, кто из вас сильнее!</p>
+          <a href="https://play.google.com/store/apps/details?id=com.AGAMESSTUDIO.GlowDuel" class="button-download" style="--bg-image-download: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
+            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');" target="_blank">Подробнее о продукте</a>
+        </div>
+      </div>
+      <hr class="styled-line">
+
+      <!-- SIMPLE FARMER -->
+
+      <div class="video-panel">
+        <video class="video-bg-not-supported" autoplay muted loop>
+          <source src="{{ url_for('static', filename='src/sf_rendeer.mp4') }}" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="overlay-content">
+          <img src="{{ url_for('static', filename='src/SF_icon.png') }}" alt="Иконка игры" class="game-icon">
+          <h1 class="game-title">Simple farmer</h1>
+          <p class="game-description">В данной игре, вы - простой фермер, который хочет разбогатеть, так чего же мы ждём?</p>
+          <a href="https://play.google.com/store/apps/details?id=com.AGAMESSTUDIO.TOPDOWNFARMER2D" class="button-download" style="--bg-image-download: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
+            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');" target="_blank">Подробнее о продукте</a>
+        </div>
+      </div>
+      <hr class="styled-line">
+
+      <!-- TRADER LIFE SIMULATOR -->
+
+      <div class="video-panel">
+        <video class="video-bg-not-supported" autoplay muted loop>
+          <source src="{{ url_for('static', filename='src/trader_rendeer.mp4') }}" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+        <div class="overlay-content">
+          <img src="{{ url_for('static', filename='src/Trader_icon.png') }}" alt="Иконка игры" class="game-icon">
+          <h1 class="game-title">Trader life simulator</h1>
+          <p class="game-description">Станьте трейдером и торгуйте валютами, зарабатывате на этом и выживайте!</p>
+          <a href="https://play.google.com/store/apps/details?id=com.AGAMESSTUDIO.traderlifesim" class="button-download" style="--bg-image-download: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
+            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');" target="_blank">Подробнее о продукте</a>
+        </div>
+      </div>
+      <hr class="styled-line">
+
+      <div class="footer" style="--bg-image-panel: url('{{ url_for('static', filename='src/panal.png') }}');">
+        <div class="block-text-bottom">
+          И так друзья, здесь сайт и заканчивается, но если хотите связаться с создателем, то можете заглянуть на страницу "Контакты"
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>
