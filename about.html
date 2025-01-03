@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная страница</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header" style="--bg-image-panel: url('{{ url_for('static', filename='src/panal.png') }}');">
-        <!-- Логотип -->
-        <div class="logo" style="--bg-image-logo: url('{{url_for('static', filename='src/logo_site.png') }}');"></div>
+  <div class="header" style="--bg-image-panel: url(src/panal.png);">
+    <!-- Логотип -->
+    <div class="logo" style="--bg-image-logo: url(src/logo_site.png);"></div>
 
-        <!-- Панель навигации -->
-        <div class="nav">
-            <a href="/" class="button" style="--bg-image: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
-            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');">Главная</a>
-            <a href="/about" class="button" style="--bg-image: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
-            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');">О нас</a>
-            <a href="/contact" class="button" style="--bg-image: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
-            --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');">Контакты</a>
-        </div>
+    <!-- Панель навигации -->
+    <div class="nav">
+        <a href="index.html" class="button" style="--bg-image: url(src/image_not_selected.png);
+        --hover-image: url(src/image_selected.png);">Главная</a>
+        <a href="about.html" class="button" style="--bg-image: url(src/image_not_selected.png);
+        --hover-image: url(src/image_selected.png);">О нас</a>
+        <a href="contact.html" class="button" style="--bg-image: url(src/image_not_selected.png);
+        --hover-image: url(src/image_selected.png);">Контакты</a>
     </div>
+  </div>
         <div class="content">
           <div class="center-smth">
             <div class="centered-text-block">
@@ -47,20 +47,20 @@
     <div class="video-panel">
 
         <div class="contact-variant-2">
-            <img src="{{ url_for('static', filename='src/youtube-panel.png') }}">
+            <img src="src/youtube-panel.png">
           <div class="overlay-content">
-            <img src="{{ url_for('static', filename='src/youtube.png') }}" alt="Иконка игры" class="game-icon">
+            <img src="src/youtube.png" alt="Иконка игры" class="game-icon">
             <h1 class="game-title">Youtube</h1>
             <p class="game-description">Связаться по youtube</p>
-            <a href="https://www.youtube.com/@A-GAMES-STUDIO" class="button-download" style="--bg-image-download: url('{{ url_for('static', filename='src/image_not_selected.png') }}');
-              --hover-image: url('{{ url_for('static', filename='src/image_selected.png') }}');" target="_blank">Зайти на канал</a>
+            <a href="https://www.youtube.com/@A-GAMES-STUDIO" class="button-download" style="--bg-image-download: url(src/image_not_selected.png);
+              --hover-image: url(src/image_selected.png);" target="_blank">Зайти на канал</a>
           </div>
         </div>
 
       </div>
       <hr class="styled-line">
 
-      <div class="footer" style="--bg-image-panel: url('{{ url_for('static', filename='src/panal.png') }}');">
+      <div class="footer" style="--bg-image-panel: url(src/panal.png);">
         <div class="block-text-bottom">
           И так друзья, здесь сайт и заканчивается, если хотите связаться с создателем, то можете заглянуть на страницу "Контакты"!
         </div>
