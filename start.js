@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Эмулируем загрузку контента
     setTimeout(() => {
         preloader.classList.add("hidden"); // Добавляем класс, чтобы запустить анимацию
+        content.style.display = "block";
         setTimeout(() => {
             preloader.style.display = "none"; // Убираем элемент полностью после анимации
-            content.style.display = "block"; // Показываем контент
         }, 1000); // Ждём 1 секунду (длительность анимации в CSS)
     }, 2000); // 2 секунды задержки для демонстрации
 });
