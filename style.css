@@ -315,7 +315,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('src/background.png') no-repeat center center / cover; /* Устанавливаем картинку на фон */
+  background: url('https://autogamer-daveloper.github.io/A-GAMES-STUDIO-WEBSITE/src/background.png') no-repeat center center / cover;
   display: flex;
   flex-direction: column;
   align-items: center;
