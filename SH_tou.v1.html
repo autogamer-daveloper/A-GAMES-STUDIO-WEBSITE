@@ -85,5 +85,16 @@
     </div>
   </div>
     <script src="start.js"></script>
+    <script>
+      (function() {
+          if (!sessionStorage.getItem("updated")) { // Проверяем, было ли обновление
+              let url = window.location.href.split('?')[0]; // Чистим URL от старых параметров
+              let newUrl = url + '?t=' + new Date().getTime(); // Добавляем метку времени
+      
+              sessionStorage.setItem("updated", "true"); // Запоминаем, что обновление произошло
+              window.location.replace(newUrl); // Перезагружаем страницу с новым URL
+          }
+      })();
+    </script> 
 </body>
 </html>
