@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css?v=1.0.0.0">
+    <link rel="preload" href="src/background.png?v=1.0.0.0" as="image">
+    <link rel="preload" href="src/spinner.png?v=1.0.0.0" as="image">
+</head>
+<body>
+  <div id="preloader">
+    <img src="src/spinner.png?v=1.0.0.0" alt="Loading..." class="spinner">
+    <div class="loading-text">Loading...</div>
+  </div>
+  <div id="content">
+    <div class="header" style="--bg-image-panel: url(src/panal.png?v=1.0.0.0);">
+        <!-- Логотип -->
+        <div class="logo" style="--bg-image-logo: url(src/logo_site.png?v=1.0.0.0);"></div>
+
+        <!-- Панель навигации -->
+        <div class="nav">
+          <a href="index.html?v=1.0.0.0" class="glow-button">
+            <span class="button-text">Language</span>
+          </a>
+          <a href="index_en.html?v=1.0.0.0" class="glow-button">
+            <span class="button-text">Projects</span>
+          </a>
+          <a href="about_en.html?v=1.0.0.0" class="glow-button">
+            <span class="button-text">About</span>
+          </a>
+          <a href="contact_en.html?v=1.0.0.0" class="glow-button">
+            <span class="button-text">Contacts</span>
+          </a>
+        </div>
+    </div>
+        <div class="content">
+          <div class="center-smth">
+            <div class="centered-text-block">
+                <div class="text-header">
+                <h1>Published projects to Play Market:</h1>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Нижний блок с мелким текстом -->
+            <!-- <div class="small-text">
+                <p> На данной странице вы можете увидеть
+                  мои выпущенные проекты:
+                </p>
+            </div> -->
+        </div>
+    <div class="centered">
+
+        <hr class="styled-line">
+
+        <!-- STYLISH HORIZON -->
+
+    <div class="game-panel">
+      <img class="game-bg" src="src/SH_BG.png?v=1.0.0.0" />
+      <div class="overlay-content">
+        <img src="src/SH_icon.PNG?v=1.0.0.0" alt="Иконка игры" class="game-icon">
+        <h1 class="game-title">Stylish horizon</h1>
+        <p class="game-description">
+          Stylish story-driven racing with choices. Outspeed your fate!
+        </p>
+
+        <!-- Группировка всех кнопок -->
+        <div class="button-grid">
+          <a href="https://play.google.com/store/apps/details?id=com.AGAMESSTUDIO.Stylishhorizon" target="_blank" class="glow-button">
+            <span class="button-text">More about game</span>
+          </a>
+          <a href="temp_events_en.html?v=1.0.0.0" class="glow-button">
+            <span class="button-text">Temporary game events</span>
+          </a>
+          <a href="SH_pp_en.html?v=1.0.0.0" class="glow-button">
+            <span class="button-text">Privacy policy</span>
+          </a>
+          <a href="SH_tou_en.html?v=1.0.0.0" class="glow-button">
+            <span class="button-text">Terms of use</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <hr class="styled-line">
+
+      <div class="footer" style="--bg-image-panel: url(src/panal.png?v=1.0.0.0);">
+        <div class="block-text-bottom">
+          Page ended!
+        </div>
+    </div>
+    </div>
+  </div>
+    <script src="start.js"></script>
+    <script>
+      (function() {
+          if (!sessionStorage.getItem("updated")) { // Проверяем, было ли обновление
+              let url = window.location.href.split('?')[0]; // Чистим URL от старых параметров
+              let newUrl = url + '?t=' + new Date().getTime(); // Добавляем метку времени
+      
+              sessionStorage.setItem("updated", "true"); // Запоминаем, что обновление произошло
+              window.location.replace(newUrl); // Перезагружаем страницу с новым URL
+          }
+      })();
+    </script>         
+</body>
+</html>
