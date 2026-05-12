@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slime slasher "Политика приватности"</title>
+    <link rel="stylesheet" href="style-SS.css?v=1.0.0.2">
+    <link rel="preload" href="src/empty-bg.png?v=1.0.0.1" as="image">
+    <link rel="preload" href="src/spinner.png?v=1.0.0.0" as="image">
+</head>
+<body>
+  <button id="menuToggleBtn" class="menu-toggle hidden">Меню</button>
+  <div id="preloader">
+    <img src="src/spinner.png?v=1.0.0.0" alt="Loading..." class="spinner">
+    <div class="loading-text">Загрузка...</div>
+  </div>
+  <div id="content">
+    <div class="header" style="--bg-image-panel: url(src/panal.png);">
+        <!-- Логотип -->
+        <div class="logo" style="--bg-image-logo: url(src/logo_site.png);"></div>
+
+        <!-- Панель навигации -->
+        <div class="nav">
+          <a href="index.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Язык</span>
+          </a>
+          <a href="index_ru.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Проекты</span>
+          </a>
+          <a href="about_ru.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">О нас</span>
+          </a>
+          <a href="contact_ru.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Связаться</span>
+          </a>
+        </div>
+    </div>
+        <div class="content">
+          <div class="center-smth">
+            <div class="centered-text-block">
+                <div class="text-header">
+                <h1>Добро пожаловать на страницу политики приватности</h1>
+                </div>
+              </div>
+            </div>
+            <div class="small-text">
+                <h2>Политика конфиденциальности</h2>
+              
+              <p>Данная политика конфиденциальности применяется к приложению Slime slasher (далее именуемому «Приложение») для мобильных устройств, которое было создано A Games Studio (далее именуемой «Поставщик услуг»).</p>
+
+              <p>Приложение является open-source игрой, которая уважает вашу приватность.</p>
+
+              <p>Поставщик услуг НЕ собирает, НЕ хранит и НЕ обрабатывает персональные данные пользователей на серверах.</p>
+
+              <p>Единственные данные, которые сохраняются — это локальные сохранения игры на вашем устройстве.</p>
+
+              <p>Некоторые сторонние системы (например, компоненты Unity или платформенные API, такие как Google Play Services) могут автоматически собирать технические данные для стабильной работы. Этот сбор данных осуществляется сторонними поставщиками и не контролируется Поставщиком услуг.</p>
+
+              <p>Рекламные SDK и аналитика поставщиком услуг не внедряются.</p>
+
+              <p>Исходный код доступен по лицензии с открытым исходным кодом.</p>
+
+                <h4>Изменения</h4>
+              <p>Настоящая Политика конфиденциальности может время от времени обновляться по любой причине. Поставщик услуг уведомит вас о любых изменениях в своей Политике конфиденциальности, обновив эту страницу новой Политикой конфиденциальности. Вам рекомендуется регулярно просматривать настоящую Политику конфиденциальности на предмет любых изменений, поскольку дальнейшее использование считается одобрением всех изменений.</p>
+                  
+                <p>Эта политика конфиденциальности действительна с 2026-05-12</p>
+                  
+              <h4>Твоё соглашение</h4>
+            <p>Используя Приложение, вы даете согласие на обработку вашей информации, как указано в настоящей Политике конфиденциальности и с изменениями, внесенными Поставщиком услуг.</p>
+                  
+                <h4>Контакты</h4>
+              <p>Если у вас возникли вопросы относительно конфиденциальности при использовании Приложения или у вас есть вопросы о применяемых методах, свяжитесь с Поставщиком услуг по электронной почте по адресу agamesstudio1987@gmail.com.</p>
+            </div>
+        </div>
+    <div class="centered">
+        <hr class="styled-line">
+      <div class="footer" style="--bg-image-panel: url(src/panal.png?v=1.0.0.0);">
+        <div class="block-text-bottom">
+          Посетители, этот документ был написан для игры "Slime slasher". Если хотите связаться с создателем, то можете заглянуть на страницу "Контакты"
+        </div>
+    </div>
+    </div>
+  </div>
+    <script src="start.js?v=1.0.0.0"></script>
+    <script>
+      (function() {
+          if (!sessionStorage.getItem("updated")) { // Проверяем, было ли обновление
+              let url = window.location.href.split('?')[0]; // Чистим URL от старых параметров
+              let newUrl = url + '?t=' + new Date().getTime(); // Добавляем метку времени
+      
+              sessionStorage.setItem("updated", "true"); // Запоминаем, что обновление произошло
+              window.location.replace(newUrl); // Перезагружаем страницу с новым URL
+          }
+      })();
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector(".header");
+        const menuBtn = document.getElementById("menuToggleBtn");
+
+        // стартовое состояние: меню скрыто, кнопка видима
+        header.classList.add("hidden");
+        menuBtn.classList.remove("hidden");
+
+        function hideMenu() {
+            header.classList.add("hidden");
+            menuBtn.classList.remove("hidden");
+        }
+
+        function showMenu() {
+            header.classList.remove("hidden");
+            menuBtn.classList.add("hidden");
+        }
+
+        header.addEventListener("click", (e) => {
+            const isClickable = e.target.closest("a") || e.target.closest(".logo");
+            if (!isClickable) hideMenu();
+        });
+
+        menuBtn.addEventListener("click", showMenu);
+    });
+    </script>
+</body>
+</html>

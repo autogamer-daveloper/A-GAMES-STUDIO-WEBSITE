@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="style.css?v=1.0.0.1">
-    <link rel="preload" href="src/background.png?v=1.0.0.0" as="image">
+    <link rel="preload" href="src/empty-bg.png?v=1.0.0.1" as="image">
     <link rel="preload" href="src/spinner.png?v=1.0.0.0" as="image">
 </head>
 <body>
+  <button id="menuToggleBtn" class="menu-toggle hidden">Menu</button>
   <div id="preloader">
     <img src="src/spinner.png?v=1.0.0.0" alt="Loading..." class="spinner">
     <div class="loading-text">Loading...</div>
@@ -85,6 +86,35 @@
 
       <hr class="styled-line">
 
+    <div class="game-panel">
+      <img class="game-bg" src="src/SS_BG.png?v=1.0.0.0" alt="Фон игры" />
+      <div class="overlay-content">
+        <img src="src/SS_icon.PNG?v=1.0.0.0" alt="Иконка игры" class="game-icon">
+        <h1 class="game-title">Slime Slasher</h1>
+        <p class="game-description">
+          Exciting slime adventures await you!
+        </p>
+
+        <!-- Группировка всех кнопок -->
+        <div class="button-grid">
+          <a href="https://play.google.com/store/apps/details?id=com.AGAMESSTUDIO.slimeslasher" target="_blank" class="glow-button">
+            <span class="button-text">More about game</span>
+          </a>
+          <a href="temp_events_en.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Temporary game events</span>
+          </a>
+          <a href="SS_pp_en.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Privacy policy</span>
+          </a>
+          <a href="SS_tou_en.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Terms of use</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <hr class="styled-line">
+
       <div class="footer" style="--bg-image-panel: url(src/panal.png?v=1.0.0.0);">
         <div class="block-text-bottom">
           Page ended!
@@ -103,6 +133,33 @@
               window.location.replace(newUrl); // Перезагружаем страницу с новым URL
           }
       })();
-    </script>         
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector(".header");
+        const menuBtn = document.getElementById("menuToggleBtn");
+
+        // стартовое состояние: меню скрыто, кнопка видима
+        header.classList.add("hidden");
+        menuBtn.classList.remove("hidden");
+
+        function hideMenu() {
+            header.classList.add("hidden");
+            menuBtn.classList.remove("hidden");
+        }
+
+        function showMenu() {
+            header.classList.remove("hidden");
+            menuBtn.classList.add("hidden");
+        }
+
+        header.addEventListener("click", (e) => {
+            const isClickable = e.target.closest("a") || e.target.closest(".logo");
+            if (!isClickable) hideMenu();
+        });
+
+        menuBtn.addEventListener("click", showMenu);
+    });
+    </script>
 </body>
 </html>

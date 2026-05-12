@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stylish horizon "Условия использования"</title>
-    <link rel="stylesheet" href="style.css?v=1.0.0.1">
-    <link rel="preload" href="src/background.png?v=1.0.0.0" as="image">
+    <link rel="stylesheet" href="style-SH.css?v=1.0.0.2">
+    <link rel="preload" href="src/empty-bg.png?v=1.0.0.1" as="image">
     <link rel="preload" href="src/spinner.png?v=1.0.0.0" as="image">
 </head>
 <body>
+  <button id="menuToggleBtn" class="menu-toggle hidden">Меню</button>
   <div id="preloader">
     <img src="src/spinner.png?v=1.0.0.0" alt="Loading..." class="spinner">
     <div class="loading-text">Загрузка...</div>
@@ -100,6 +101,33 @@
               window.location.replace(newUrl); // Перезагружаем страницу с новым URL
           }
       })();
-    </script> 
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector(".header");
+        const menuBtn = document.getElementById("menuToggleBtn");
+
+        // стартовое состояние: меню скрыто, кнопка видима
+        header.classList.add("hidden");
+        menuBtn.classList.remove("hidden");
+
+        function hideMenu() {
+            header.classList.add("hidden");
+            menuBtn.classList.remove("hidden");
+        }
+
+        function showMenu() {
+            header.classList.remove("hidden");
+            menuBtn.classList.add("hidden");
+        }
+
+        header.addEventListener("click", (e) => {
+            const isClickable = e.target.closest("a") || e.target.closest(".logo");
+            if (!isClickable) hideMenu();
+        });
+
+        menuBtn.addEventListener("click", showMenu);
+    });
+    </script>
 </body>
 </html>

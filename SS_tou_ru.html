@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slime slasher "Условия использования"</title>
+    <link rel="stylesheet" href="style-SS.css?v=1.0.0.2">
+    <link rel="preload" href="src/empty-bg.png?v=1.0.0.1" as="image">
+    <link rel="preload" href="src/spinner.png?v=1.0.0.0" as="image">
+</head>
+<body>
+  <button id="menuToggleBtn" class="menu-toggle hidden">Меню</button>
+  <div id="preloader">
+    <img src="src/spinner.png?v=1.0.0.0" alt="Loading..." class="spinner">
+    <div class="loading-text">Загрузка...</div>
+  </div>
+  <div id="content">
+    <div class="header" style="--bg-image-panel: url(src/panal.png?v=1.0.0.0);">
+        <!-- Логотип -->
+        <div class="logo" style="--bg-image-logo: url(src/logo_site.png?v=1.0.0.0);"></div>
+
+        <!-- Панель навигации -->
+        <div class="nav">
+          <a href="index.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Язык</span>
+          </a>
+          <a href="index_ru.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Проекты</span>
+          </a>
+          <a href="about_ru.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">О нас</span>
+          </a>
+          <a href="contact_ru.html?v=1.0.0.1" class="glow-button">
+            <span class="button-text">Связаться</span>
+          </a>
+        </div>
+    </div>
+        <div class="content">
+          <div class="center-smth">
+            <div class="centered-text-block">
+                <div class="text-header">
+                <h1>Добро пожаловать на страницу условий использования приложения</h1>
+                </div>
+              </div>
+            </div>
+            <div class="small-text">
+            <h4>Условия и положения</h4>
+            <p>Настоящие положения и условия применяются к приложению Slime slasher (далее именуемому «Приложение») для мобильных устройств, созданному компанией A Games Studio (далее именуемой «Поставщик услуг») в качестве разработчика.</p>
+              
+            <p>При загрузке или использовании Приложения вы автоматически соглашаетесь со следующими условиями. Настоятельно рекомендуется, чтобы вы внимательно прочитали и поняли эти условия перед использованием Приложения.</p>
+
+            <p>Товарный знак, бренд и название приложения остаются собственностью поставщика услуг.</p>
+ 
+            <p>Обратите внимание, что Приложение использует сторонние сервисы, которые имеют свои собственные Условия и положения. Ниже приведены ссылки на Условия и положения сторонних поставщиков услуг, используемых Приложением:</p>
+
+              <h5>Unity https://unity3d.com/legal/privacy-policy</h5>
+
+            <p>Игра предоставляется "как есть" без каких-либо гарантий.</p>
+
+            <p>Вы можете свободно изменять, распространять и использовать игру в рамках open-source лицензии.</p>
+
+            <p>Разработчик не несёт ответственности за любые возможные последствия использования игры.</p>
+              
+            <h4>Пользовательский контент</h4>
+            <p>Поставщик услуг не несет ответственности за контент, созданный пользователями Приложения.</p>
+              
+            <h4>Изменения настоящих Условий и положений</h4>
+            <p>Поставщик услуг может периодически обновлять свои Условия и положения. Поэтому вам рекомендуется регулярно просматривать эту страницу на предмет любых изменений. Поставщик услуг уведомит вас о любых изменениях, разместив новые Условия и положения на этой странице.</p>
+              
+            <p>Настоящие положения и условия вступают в силу с 2026-05-12</p>
+              
+            <h4>Контакты</h4>
+            <p>Если у вас есть какие-либо вопросы или предложения относительно Условий, пожалуйста, не стесняйтесь обращаться к Поставщику услуг по адресу agamesstudio1987@gmail.com.</p>
+            </div>
+        </div>
+    <div class="centered">
+        <hr class="styled-line">
+      <div class="footer" style="--bg-image-panel: url(src/panal.png?v=1.0.0.0);">
+        <div class="block-text-bottom">
+          Посетители, этот документ был написан для игры "Slime slasher". Если хотите связаться с создателем, то можете заглянуть на страницу "Контакты"
+        </div>
+    </div>
+    </div>
+  </div>
+    <script src="start.js?v=1.0.0.0"></script>
+    <script>
+      (function() {
+          if (!sessionStorage.getItem("updated")) { // Проверяем, было ли обновление
+              let url = window.location.href.split('?')[0]; // Чистим URL от старых параметров
+              let newUrl = url + '?t=' + new Date().getTime(); // Добавляем метку времени
+      
+              sessionStorage.setItem("updated", "true"); // Запоминаем, что обновление произошло
+              window.location.replace(newUrl); // Перезагружаем страницу с новым URL
+          }
+      })();
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector(".header");
+        const menuBtn = document.getElementById("menuToggleBtn");
+
+        // стартовое состояние: меню скрыто, кнопка видима
+        header.classList.add("hidden");
+        menuBtn.classList.remove("hidden");
+
+        function hideMenu() {
+            header.classList.add("hidden");
+            menuBtn.classList.remove("hidden");
+        }
+
+        function showMenu() {
+            header.classList.remove("hidden");
+            menuBtn.classList.add("hidden");
+        }
+
+        header.addEventListener("click", (e) => {
+            const isClickable = e.target.closest("a") || e.target.closest(".logo");
+            if (!isClickable) hideMenu();
+        });
+
+        menuBtn.addEventListener("click", showMenu);
+    });
+    </script>
+</body>
+</html>

@@ -9,6 +9,7 @@
     <link rel="preload" href="src/spinner.png?v=1.0.0.0" as="image">
 </head>
 <body>
+  <button id="menuToggleBtn" class="menu-toggle hidden">Меню</button>
   <div id="preloader">
     <img src="src/spinner.png?v=1.0.0.0" alt="Loading..." class="spinner">
     <div class="loading-text">Загрузка...</div>
@@ -53,7 +54,7 @@
 
     <div class="video-panel">
 
-        <div class="contact-variant-1">
+        <div class="contact-variant-2">
           <img src="src/gmail-panel.png?v=1.0.0.0">
         <div class="overlay-content">
           <img src="src/gmail.png?v=1.0.0.0" alt="Иконка игры" class="game-icon">
@@ -63,7 +64,10 @@
             <span class="button-text">Связаться</span>
           </a>
         </div>
-        </div>
+      </div>
+
+    </div>
+    <div class="video-panel">
 
         <div class="contact-variant-2">
             <img src="src/youtube-panel.png?v=1.0.0.0">
@@ -76,8 +80,11 @@
           </a>
           </div>
         </div>
+      
+    </div>
+    <div class="video-panel">
 
-        <div class="contact-variant-3">
+        <div class="contact-variant-2">
             <img src="src/telegram-panel.png?v=1.0.0.0">
           <div class="overlay-content">
             <img src="src/telegram.png?v=1.0.0.0" alt="Иконка игры" class="game-icon">
@@ -110,6 +117,33 @@
               window.location.replace(newUrl); // Перезагружаем страницу с новым URL
           }
       })();
-    </script> 
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector(".header");
+        const menuBtn = document.getElementById("menuToggleBtn");
+
+        // стартовое состояние: меню скрыто, кнопка видима
+        header.classList.add("hidden");
+        menuBtn.classList.remove("hidden");
+
+        function hideMenu() {
+            header.classList.add("hidden");
+            menuBtn.classList.remove("hidden");
+        }
+
+        function showMenu() {
+            header.classList.remove("hidden");
+            menuBtn.classList.add("hidden");
+        }
+
+        header.addEventListener("click", (e) => {
+            const isClickable = e.target.closest("a") || e.target.closest(".logo");
+            if (!isClickable) hideMenu();
+        });
+
+        menuBtn.addEventListener("click", showMenu);
+    });
+    </script>
 </body>
 </html>
